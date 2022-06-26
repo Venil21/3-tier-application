@@ -1,0 +1,1627 @@
+[0m[1mmodule.eks.module.eks_managed_node_group["blue"].data.aws_partition.current: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_partition.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["green"].data.aws_partition.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["blue"].data.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["green"].data.aws_caller_identity.current: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["blue"].data.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["green"].data.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mmodule.eks.data.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["blue"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["green"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_iam_policy_document.assume_role_policy[0]: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["green"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296][0m
+[0m[1mmodule.eks.data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2764486067][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["blue"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["green"].data.aws_caller_identity.current: Still reading... [10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["blue"].data.aws_caller_identity.current: Still reading... [10s elapsed][0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["blue"].data.aws_caller_identity.current: Read complete after 12s [id=886156571893][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["green"].data.aws_caller_identity.current: Read complete after 12s [id=886156571893][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create
+ [36m<=[0m read (data resources)
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.eks.data.tls_certificate.this[0][0m will be read during apply[0m
+  # (config refers to values not yet known)[0m
+[0m [36m<=[0m[0m data "tls_certificate" "this" {
+      [32m+[0m [0m[1m[0mcertificates[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0murl[0m[0m          = (known after apply)
+    }
+
+[1m  # module.eks.aws_cloudwatch_log_group.this[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_cloudwatch_log_group" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m              = "/aws/eks/eks-cluster/cluster"
+      [32m+[0m [0m[1m[0mretention_in_days[0m[0m = 90
+      [32m+[0m [0m[1m[0mtags[0m[0m              = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m          = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+    }
+
+[1m  # module.eks.aws_ec2_tag.cluster_primary_security_group["Environment"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_ec2_tag" "cluster_primary_security_group" {
+      [32m+[0m [0m[1m[0mid[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mkey[0m[0m         = "Environment"
+      [32m+[0m [0m[1m[0mresource_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mvalue[0m[0m       = "Production"
+    }
+
+[1m  # module.eks.aws_ec2_tag.cluster_primary_security_group["Terraform"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_ec2_tag" "cluster_primary_security_group" {
+      [32m+[0m [0m[1m[0mid[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mkey[0m[0m         = "Terraform"
+      [32m+[0m [0m[1m[0mresource_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mvalue[0m[0m       = "true"
+    }
+
+[1m  # module.eks.aws_eks_cluster.this[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_eks_cluster" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mcertificate_authority[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mcreated_at[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0menabled_cluster_log_types[0m[0m = [
+          [32m+[0m [0m"api",
+          [32m+[0m [0m"audit",
+          [32m+[0m [0m"authenticator",
+        ]
+      [32m+[0m [0m[1m[0mendpoint[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0midentity[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                      = "eks-cluster"
+      [32m+[0m [0m[1m[0mplatform_version[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mrole_arn[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mstatus[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                      = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                  = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mversion[0m[0m                   = "1.22"
+
+      [32m+[0m [0mkubernetes_network_config {
+          [32m+[0m [0m[1m[0mip_family[0m[0m         = (known after apply)
+          [32m+[0m [0m[1m[0mservice_ipv4_cidr[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mtimeouts {}
+
+      [32m+[0m [0mvpc_config {
+          [32m+[0m [0m[1m[0mcluster_security_group_id[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mendpoint_private_access[0m[0m   = true
+          [32m+[0m [0m[1m[0mendpoint_public_access[0m[0m    = true
+          [32m+[0m [0m[1m[0mpublic_access_cidrs[0m[0m       = [
+              [32m+[0m [0m"0.0.0.0/0",
+            ]
+          [32m+[0m [0m[1m[0msecurity_group_ids[0m[0m        = (known after apply)
+          [32m+[0m [0m[1m[0msubnet_ids[0m[0m                = (known after apply)
+          [32m+[0m [0m[1m[0mvpc_id[0m[0m                    = (known after apply)
+        }
+    }
+
+[1m  # module.eks.aws_iam_openid_connect_provider.oidc_provider[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_iam_openid_connect_provider" "oidc_provider" {
+      [32m+[0m [0m[1m[0marn[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mclient_id_list[0m[0m  = [
+          [32m+[0m [0m"sts.amazonaws.com",
+        ]
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m            = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "eks-cluster-eks-irsa"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m        = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "eks-cluster-eks-irsa"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mthumbprint_list[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0murl[0m[0m             = (known after apply)
+    }
+
+[1m  # module.eks.aws_iam_role.this[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_iam_role" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0massume_role_policy[0m[0m    = jsonencode(
+            {
+              [32m+[0m [0mStatement = [
+                  [32m+[0m [0m{
+                      [32m+[0m [0mAction    = "sts:AssumeRole"
+                      [32m+[0m [0mEffect    = "Allow"
+                      [32m+[0m [0mPrincipal = {
+                          [32m+[0m [0mService = "eks.amazonaws.com"
+                        }
+                      [32m+[0m [0mSid       = "EKSClusterAssumeRole"
+                    },
+                ]
+              [32m+[0m [0mVersion   = "2012-10-17"
+            }
+        )
+      [32m+[0m [0m[1m[0mcreate_date[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mforce_detach_policies[0m[0m = true
+      [32m+[0m [0m[1m[0mid[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mmanaged_policy_arns[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mmax_session_duration[0m[0m  = 3600
+      [32m+[0m [0m[1m[0mname[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m           = "eks-cluster-cluster-"
+      [32m+[0m [0m[1m[0mpath[0m[0m                  = "/"
+      [32m+[0m [0m[1m[0mtags[0m[0m                  = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m              = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0munique_id[0m[0m             = (known after apply)
+
+      [32m+[0m [0minline_policy {
+          [32m+[0m [0m[1m[0mname[0m[0m   = "eks-cluster-cluster"
+          [32m+[0m [0m[1m[0mpolicy[0m[0m = (known after apply)
+        }
+    }
+
+[1m  # module.eks.aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m [0m[1m[0mid[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpolicy_arn[0m[0m = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+      [32m+[0m [0m[1m[0mrole[0m[0m       = (known after apply)
+    }
+
+[1m  # module.eks.aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSVPCResourceController"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m [0m[1m[0mid[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpolicy_arn[0m[0m = "arn:aws:iam::aws:policy/AmazonEKSVPCResourceController"
+      [32m+[0m [0m[1m[0mrole[0m[0m       = (known after apply)
+    }
+
+[1m  # module.eks.aws_security_group.cluster[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group" "cluster" {
+      [32m+[0m [0m[1m[0marn[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m            = "EKS cluster security group"
+      [32m+[0m [0m[1m[0megress[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mingress[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m            = "eks-cluster-cluster-"
+      [32m+[0m [0m[1m[0mowner_id[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false
+      [32m+[0m [0m[1m[0mtags[0m[0m                   = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "eks-cluster-cluster"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m               = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "eks-cluster-cluster"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                 = (known after apply)
+    }
+
+[1m  # module.eks.aws_security_group.node[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group" "node" {
+      [32m+[0m [0m[1m[0marn[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m            = "EKS node shared security group"
+      [32m+[0m [0m[1m[0megress[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mingress[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m            = "eks_security_group-"
+      [32m+[0m [0m[1m[0mowner_id[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false
+      [32m+[0m [0m[1m[0mtags[0m[0m                   = {
+          [32m+[0m [0m"Environment"                       = "Production"
+          [32m+[0m [0m"Name"                              = "eks_security_group"
+          [32m+[0m [0m"Terraform"                         = "true"
+          [32m+[0m [0m"kubernetes.io/cluster/eks-cluster" = "owned"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m               = {
+          [32m+[0m [0m"Environment"                       = "Production"
+          [32m+[0m [0m"Name"                              = "eks_security_group"
+          [32m+[0m [0m"Terraform"                         = "true"
+          [32m+[0m [0m"kubernetes.io/cluster/eks-cluster" = "owned"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                 = (known after apply)
+    }
+
+[1m  # module.eks.aws_security_group_rule.cluster["egress_nodes_443"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "cluster" {
+      [32m+[0m [0m[1m[0mdescription[0m[0m              = "Cluster API to node groups"
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 443
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprefix_list_ids[0m[0m          = []
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "tcp"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = false
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 443
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "egress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.cluster["egress_nodes_kubelet"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "cluster" {
+      [32m+[0m [0m[1m[0mdescription[0m[0m              = "Cluster API to node kubelets"
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 10250
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprefix_list_ids[0m[0m          = []
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "tcp"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = false
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 10250
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "egress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.cluster["ingress_nodes_443"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "cluster" {
+      [32m+[0m [0m[1m[0mdescription[0m[0m              = "Node groups to cluster API"
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 443
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprefix_list_ids[0m[0m          = []
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "tcp"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = false
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 443
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "ingress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["egress_cluster_443"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m [0m[1m[0mdescription[0m[0m              = "Node groups to cluster API"
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 443
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprefix_list_ids[0m[0m          = []
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "tcp"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = false
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 443
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "egress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["egress_https"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m [0m[1m[0mcidr_blocks[0m[0m              = [
+          [32m+[0m [0m"0.0.0.0/0",
+        ]
+      [32m+[0m [0m[1m[0mdescription[0m[0m              = "Egress all HTTPS to internet"
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 443
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprefix_list_ids[0m[0m          = []
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "tcp"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = false
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 443
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "egress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["egress_ntp_tcp"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m [0m[1m[0mcidr_blocks[0m[0m              = [
+          [32m+[0m [0m"0.0.0.0/0",
+        ]
+      [32m+[0m [0m[1m[0mdescription[0m[0m              = "Egress NTP/TCP to internet"
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 123
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprefix_list_ids[0m[0m          = []
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "tcp"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = false
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 123
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "egress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["egress_ntp_udp"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m [0m[1m[0mcidr_blocks[0m[0m              = [
+          [32m+[0m [0m"0.0.0.0/0",
+        ]
+      [32m+[0m [0m[1m[0mdescription[0m[0m              = "Egress NTP/UDP to internet"
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 123
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprefix_list_ids[0m[0m          = []
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "udp"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = false
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 123
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "egress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["egress_self_coredns_tcp"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m [0m[1m[0mdescription[0m[0m              = "Node to node CoreDNS"
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 53
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprefix_list_ids[0m[0m          = []
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "tcp"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = true
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 53
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "egress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["egress_self_coredns_udp"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m [0m[1m[0mdescription[0m[0m              = "Node to node CoreDNS"
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 53
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprefix_list_ids[0m[0m          = []
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "udp"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = true
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 53
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "egress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["ingress_cluster_443"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m [0m[1m[0mdescription[0m[0m              = "Cluster API to node groups"
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 443
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprefix_list_ids[0m[0m          = []
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "tcp"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = false
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 443
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "ingress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["ingress_cluster_kubelet"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m [0m[1m[0mdescription[0m[0m              = "Cluster API to node kubelets"
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 10250
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprefix_list_ids[0m[0m          = []
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "tcp"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = false
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 10250
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "ingress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m [0m[1m[0mdescription[0m[0m              = "Node to node CoreDNS"
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 53
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprefix_list_ids[0m[0m          = []
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "tcp"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = true
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 53
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "ingress"
+    }
+
+[1m  # module.eks.aws_security_group_rule.node["ingress_self_coredns_udp"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "node" {
+      [32m+[0m [0m[1m[0mdescription[0m[0m              = "Node to node CoreDNS"
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 53
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprefix_list_ids[0m[0m          = []
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "udp"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = true
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 53
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "ingress"
+    }
+
+[1m  # module.networking.aws_eip.nat_eip[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_eip" "nat_eip" {
+      [32m+[0m [0m[1m[0mallocation_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0massociation_id[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mcarrier_ip[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mcustomer_owned_ip[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mdomain[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0minstance[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_border_group[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_interface[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_dns[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ip[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ipv4_pool[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mtags_all[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mvpc[0m[0m                  = true
+    }
+
+[1m  # module.networking.aws_internet_gateway.ig[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_internet_gateway" "ig" {
+      [32m+[0m [0m[1m[0marn[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m     = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-igw"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-igw"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m   = (known after apply)
+    }
+
+[1m  # module.networking.aws_nat_gateway.nat[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_nat_gateway" "nat" {
+      [32m+[0m [0m[1m[0mallocation_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mconnectivity_type[0m[0m    = "public"
+      [32m+[0m [0m[1m[0mid[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ip[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                 = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "nat"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m             = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "nat"
+        }
+    }
+
+[1m  # module.networking.aws_route.private_nat_app_gateway[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route" "private_nat_app_gateway" {
+      [32m+[0m [0m[1m[0mdestination_cidr_block[0m[0m = "0.0.0.0/0"
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0minstance_id[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0minstance_owner_id[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mnat_gateway_id[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0morigin[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mstate[0m[0m                  = (known after apply)
+    }
+
+[1m  # module.networking.aws_route.public_internet_gateway[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route" "public_internet_gateway" {
+      [32m+[0m [0m[1m[0mdestination_cidr_block[0m[0m = "0.0.0.0/0"
+      [32m+[0m [0m[1m[0mgateway_id[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0minstance_id[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0minstance_owner_id[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0morigin[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mstate[0m[0m                  = (known after apply)
+    }
+
+[1m  # module.networking.aws_route_table.private_app[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table" "private_app" {
+      [32m+[0m [0m[1m[0marn[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpropagating_vgws[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mroute[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m             = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-private-app-route-table"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m         = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-private-app-route-table"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m           = (known after apply)
+    }
+
+[1m  # module.networking.aws_route_table.public[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table" "public" {
+      [32m+[0m [0m[1m[0marn[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpropagating_vgws[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mroute[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m             = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-public-route-table"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m         = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-public-route-table"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m           = (known after apply)
+    }
+
+[1m  # module.networking.aws_route_table_association.private_app[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table_association" "private_app" {
+      [32m+[0m [0m[1m[0mid[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m      = (known after apply)
+    }
+
+[1m  # module.networking.aws_route_table_association.private_app[1][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table_association" "private_app" {
+      [32m+[0m [0m[1m[0mid[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m      = (known after apply)
+    }
+
+[1m  # module.networking.aws_route_table_association.private_app[2][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table_association" "private_app" {
+      [32m+[0m [0m[1m[0mid[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m      = (known after apply)
+    }
+
+[1m  # module.networking.aws_route_table_association.public[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table_association" "public" {
+      [32m+[0m [0m[1m[0mid[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m      = (known after apply)
+    }
+
+[1m  # module.networking.aws_route_table_association.public[1][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table_association" "public" {
+      [32m+[0m [0m[1m[0mid[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m      = (known after apply)
+    }
+
+[1m  # module.networking.aws_route_table_association.public[2][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table_association" "public" {
+      [32m+[0m [0m[1m[0mid[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m      = (known after apply)
+    }
+
+[1m  # module.networking.aws_security_group.default[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group" "default" {
+      [32m+[0m [0m[1m[0marn[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m            = "Default security group to allow inbound/outbound from the VPC"
+      [32m+[0m [0m[1m[0megress[0m[0m                 = [
+          [32m+[0m [0m{
+              [32m+[0m [0mcidr_blocks      = []
+              [32m+[0m [0mdescription      = ""
+              [32m+[0m [0mfrom_port        = 0
+              [32m+[0m [0mipv6_cidr_blocks = []
+              [32m+[0m [0mprefix_list_ids  = []
+              [32m+[0m [0mprotocol         = "-1"
+              [32m+[0m [0msecurity_groups  = []
+              [32m+[0m [0mself             = true
+              [32m+[0m [0mto_port          = 0
+            },
+        ]
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mingress[0m[0m                = [
+          [32m+[0m [0m{
+              [32m+[0m [0mcidr_blocks      = []
+              [32m+[0m [0mdescription      = ""
+              [32m+[0m [0mfrom_port        = 0
+              [32m+[0m [0mipv6_cidr_blocks = []
+              [32m+[0m [0mprefix_list_ids  = []
+              [32m+[0m [0mprotocol         = "-1"
+              [32m+[0m [0msecurity_groups  = []
+              [32m+[0m [0mself             = true
+              [32m+[0m [0mto_port          = 0
+            },
+        ]
+      [32m+[0m [0m[1m[0mname[0m[0m                   = "Production-default-sg"
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false
+      [32m+[0m [0m[1m[0mtags[0m[0m                   = {
+          [32m+[0m [0m"Environment" = "Production"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m               = {
+          [32m+[0m [0m"Environment" = "Production"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                 = (known after apply)
+    }
+
+[1m  # module.networking.aws_security_group.rds_sg[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group" "rds_sg" {
+      [32m+[0m [0m[1m[0marn[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m            = "Default security group to allow inbound/outbound to the DB"
+      [32m+[0m [0m[1m[0megress[0m[0m                 = [
+          [32m+[0m [0m{
+              [32m+[0m [0mcidr_blocks      = [
+                  [32m+[0m [0m"0.0.0.0/0",
+                ]
+              [32m+[0m [0mdescription      = ""
+              [32m+[0m [0mfrom_port        = 0
+              [32m+[0m [0mipv6_cidr_blocks = []
+              [32m+[0m [0mprefix_list_ids  = []
+              [32m+[0m [0mprotocol         = "-1"
+              [32m+[0m [0msecurity_groups  = []
+              [32m+[0m [0mself             = false
+              [32m+[0m [0mto_port          = 0
+            },
+        ]
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mingress[0m[0m                = [
+          [32m+[0m [0m{
+              [32m+[0m [0mcidr_blocks      = []
+              [32m+[0m [0mdescription      = ""
+              [32m+[0m [0mfrom_port        = 5432
+              [32m+[0m [0mipv6_cidr_blocks = []
+              [32m+[0m [0mprefix_list_ids  = []
+              [32m+[0m [0mprotocol         = "tcp"
+              [32m+[0m [0msecurity_groups  = (known after apply)
+              [32m+[0m [0mself             = false
+              [32m+[0m [0mto_port          = 5432
+            },
+        ]
+      [32m+[0m [0m[1m[0mname[0m[0m                   = "Production-db-sg"
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false
+      [32m+[0m [0m[1m[0mtags[0m[0m                   = {
+          [32m+[0m [0m"Environment" = "Production"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m               = {
+          [32m+[0m [0m"Environment" = "Production"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                 = (known after apply)
+    }
+
+[1m  # module.networking.aws_subnet.private_subnet_app[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_subnet" "private_subnet_app" {
+      [32m+[0m [0m[1m[0marn[0m[0m                                            = (known after apply)
+      [32m+[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m                = false
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m                              = "ap-south-1a"
+      [32m+[0m [0m[1m[0mavailability_zone_id[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                                     = "10.0.4.0/24"
+      [32m+[0m [0m[1m[0menable_dns64[0m[0m                                   = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_a_record_on_launch[0m[0m    = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_aaaa_record_on_launch[0m[0m = false
+      [32m+[0m [0m[1m[0mid[0m[0m                                             = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_association_id[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_native[0m[0m                                    = false
+      [32m+[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m                        = false
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                                       = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns_hostname_type_on_launch[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                                           = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-ap-south-1a-private-app-subnet"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                                       = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-ap-south-1a-private-app-subnet"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                                         = (known after apply)
+    }
+
+[1m  # module.networking.aws_subnet.private_subnet_app[1][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_subnet" "private_subnet_app" {
+      [32m+[0m [0m[1m[0marn[0m[0m                                            = (known after apply)
+      [32m+[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m                = false
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m                              = "ap-south-1b"
+      [32m+[0m [0m[1m[0mavailability_zone_id[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                                     = "10.0.5.0/24"
+      [32m+[0m [0m[1m[0menable_dns64[0m[0m                                   = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_a_record_on_launch[0m[0m    = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_aaaa_record_on_launch[0m[0m = false
+      [32m+[0m [0m[1m[0mid[0m[0m                                             = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_association_id[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_native[0m[0m                                    = false
+      [32m+[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m                        = false
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                                       = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns_hostname_type_on_launch[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                                           = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-ap-south-1b-private-app-subnet"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                                       = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-ap-south-1b-private-app-subnet"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                                         = (known after apply)
+    }
+
+[1m  # module.networking.aws_subnet.private_subnet_app[2][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_subnet" "private_subnet_app" {
+      [32m+[0m [0m[1m[0marn[0m[0m                                            = (known after apply)
+      [32m+[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m                = false
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m                              = "ap-south-1c"
+      [32m+[0m [0m[1m[0mavailability_zone_id[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                                     = "10.0.6.0/24"
+      [32m+[0m [0m[1m[0menable_dns64[0m[0m                                   = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_a_record_on_launch[0m[0m    = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_aaaa_record_on_launch[0m[0m = false
+      [32m+[0m [0m[1m[0mid[0m[0m                                             = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_association_id[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_native[0m[0m                                    = false
+      [32m+[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m                        = false
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                                       = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns_hostname_type_on_launch[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                                           = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-ap-south-1c-private-app-subnet"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                                       = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-ap-south-1c-private-app-subnet"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                                         = (known after apply)
+    }
+
+[1m  # module.networking.aws_subnet.private_subnet_database[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_subnet" "private_subnet_database" {
+      [32m+[0m [0m[1m[0marn[0m[0m                                            = (known after apply)
+      [32m+[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m                = false
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m                              = "ap-south-1a"
+      [32m+[0m [0m[1m[0mavailability_zone_id[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                                     = "10.0.7.0/24"
+      [32m+[0m [0m[1m[0menable_dns64[0m[0m                                   = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_a_record_on_launch[0m[0m    = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_aaaa_record_on_launch[0m[0m = false
+      [32m+[0m [0m[1m[0mid[0m[0m                                             = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_association_id[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_native[0m[0m                                    = false
+      [32m+[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m                        = false
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                                       = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns_hostname_type_on_launch[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                                           = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-ap-south-1a-private-db-subnet"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                                       = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-ap-south-1a-private-db-subnet"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                                         = (known after apply)
+    }
+
+[1m  # module.networking.aws_subnet.private_subnet_database[1][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_subnet" "private_subnet_database" {
+      [32m+[0m [0m[1m[0marn[0m[0m                                            = (known after apply)
+      [32m+[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m                = false
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m                              = "ap-south-1b"
+      [32m+[0m [0m[1m[0mavailability_zone_id[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                                     = "10.0.8.0/24"
+      [32m+[0m [0m[1m[0menable_dns64[0m[0m                                   = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_a_record_on_launch[0m[0m    = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_aaaa_record_on_launch[0m[0m = false
+      [32m+[0m [0m[1m[0mid[0m[0m                                             = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_association_id[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_native[0m[0m                                    = false
+      [32m+[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m                        = false
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                                       = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns_hostname_type_on_launch[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                                           = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-ap-south-1b-private-db-subnet"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                                       = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-ap-south-1b-private-db-subnet"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                                         = (known after apply)
+    }
+
+[1m  # module.networking.aws_subnet.private_subnet_database[2][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_subnet" "private_subnet_database" {
+      [32m+[0m [0m[1m[0marn[0m[0m                                            = (known after apply)
+      [32m+[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m                = false
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m                              = "ap-south-1c"
+      [32m+[0m [0m[1m[0mavailability_zone_id[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                                     = "10.0.9.0/24"
+      [32m+[0m [0m[1m[0menable_dns64[0m[0m                                   = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_a_record_on_launch[0m[0m    = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_aaaa_record_on_launch[0m[0m = false
+      [32m+[0m [0m[1m[0mid[0m[0m                                             = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_association_id[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_native[0m[0m                                    = false
+      [32m+[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m                        = false
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                                       = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns_hostname_type_on_launch[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                                           = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-ap-south-1c-private-db-subnet"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                                       = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-ap-south-1c-private-db-subnet"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                                         = (known after apply)
+    }
+
+[1m  # module.networking.aws_subnet.public_subnet[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_subnet" "public_subnet" {
+      [32m+[0m [0m[1m[0marn[0m[0m                                            = (known after apply)
+      [32m+[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m                = false
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m                              = "ap-south-1a"
+      [32m+[0m [0m[1m[0mavailability_zone_id[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                                     = "10.0.1.0/24"
+      [32m+[0m [0m[1m[0menable_dns64[0m[0m                                   = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_a_record_on_launch[0m[0m    = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_aaaa_record_on_launch[0m[0m = false
+      [32m+[0m [0m[1m[0mid[0m[0m                                             = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_association_id[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_native[0m[0m                                    = false
+      [32m+[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m                        = true
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                                       = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns_hostname_type_on_launch[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                                           = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-ap-south-1a-      public-subnet"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                                       = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-ap-south-1a-      public-subnet"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                                         = (known after apply)
+    }
+
+[1m  # module.networking.aws_subnet.public_subnet[1][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_subnet" "public_subnet" {
+      [32m+[0m [0m[1m[0marn[0m[0m                                            = (known after apply)
+      [32m+[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m                = false
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m                              = "ap-south-1b"
+      [32m+[0m [0m[1m[0mavailability_zone_id[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                                     = "10.0.2.0/24"
+      [32m+[0m [0m[1m[0menable_dns64[0m[0m                                   = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_a_record_on_launch[0m[0m    = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_aaaa_record_on_launch[0m[0m = false
+      [32m+[0m [0m[1m[0mid[0m[0m                                             = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_association_id[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_native[0m[0m                                    = false
+      [32m+[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m                        = true
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                                       = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns_hostname_type_on_launch[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                                           = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-ap-south-1b-      public-subnet"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                                       = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-ap-south-1b-      public-subnet"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                                         = (known after apply)
+    }
+
+[1m  # module.networking.aws_subnet.public_subnet[2][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_subnet" "public_subnet" {
+      [32m+[0m [0m[1m[0marn[0m[0m                                            = (known after apply)
+      [32m+[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m                = false
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m                              = "ap-south-1c"
+      [32m+[0m [0m[1m[0mavailability_zone_id[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                                     = "10.0.3.0/24"
+      [32m+[0m [0m[1m[0menable_dns64[0m[0m                                   = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_a_record_on_launch[0m[0m    = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_aaaa_record_on_launch[0m[0m = false
+      [32m+[0m [0m[1m[0mid[0m[0m                                             = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_association_id[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_native[0m[0m                                    = false
+      [32m+[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m                        = true
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                                       = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns_hostname_type_on_launch[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                                           = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-ap-south-1c-      public-subnet"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                                       = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-ap-south-1c-      public-subnet"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                                         = (known after apply)
+    }
+
+[1m  # module.networking.aws_vpc.vpc[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_vpc" "vpc" {
+      [32m+[0m [0m[1m[0marn[0m[0m                                  = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                           = "10.0.0.0/16"
+      [32m+[0m [0m[1m[0mdefault_network_acl_id[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mdefault_route_table_id[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mdefault_security_group_id[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mdhcp_options_id[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0menable_classiclink[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0menable_classiclink_dns_support[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0menable_dns_hostnames[0m[0m                 = true
+      [32m+[0m [0m[1m[0menable_dns_support[0m[0m                   = true
+      [32m+[0m [0m[1m[0mid[0m[0m                                   = (known after apply)
+      [32m+[0m [0m[1m[0minstance_tenancy[0m[0m                     = "default"
+      [32m+[0m [0m[1m[0mipv6_association_id[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_network_border_group[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mmain_route_table_id[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                             = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                                 = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-vpc"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                             = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "Production-vpc"
+        }
+    }
+
+[1m  # module.rds_cluster.data.aws_iam_policy_document.monitoring_rds_assume_role[0m will be read during apply[0m
+  # (depends on a resource or a module with changes pending)[0m
+[0m [36m<=[0m[0m data "aws_iam_policy_document" "monitoring_rds_assume_role" {
+      [32m+[0m [0m[1m[0mid[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mjson[0m[0m = (known after apply)
+
+      [32m+[0m [0mstatement {
+          [32m+[0m [0m[1m[0mactions[0m[0m = [
+              [32m+[0m [0m"sts:AssumeRole",
+            ]
+
+          [32m+[0m [0mprincipals {
+              [32m+[0m [0m[1m[0midentifiers[0m[0m = [
+                  [32m+[0m [0m"monitoring.rds.amazonaws.com",
+                ]
+              [32m+[0m [0m[1m[0mtype[0m[0m        = "Service"
+            }
+        }
+    }
+
+[1m  # module.rds_cluster.data.aws_partition.current[0m will be read during apply[0m
+  # (depends on a resource or a module with changes pending)[0m
+[0m [36m<=[0m[0m data "aws_partition" "current" {
+      [32m+[0m [0m[1m[0mdns_suffix[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mpartition[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mreverse_dns_prefix[0m[0m = (known after apply)
+    }
+
+[1m  # module.rds_cluster.aws_db_subnet_group.this[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_db_subnet_group" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m = "For Aurora cluster aurora-db-postgres"
+      [32m+[0m [0m[1m[0mid[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m        = "aurora-db-postgres"
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_ids[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m        = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m    = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+    }
+
+[1m  # module.rds_cluster.aws_iam_role.rds_enhanced_monitoring[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_iam_role" "rds_enhanced_monitoring" {
+      [32m+[0m [0m[1m[0marn[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0massume_role_policy[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mcreate_date[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mforce_detach_policies[0m[0m = false
+      [32m+[0m [0m[1m[0mid[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mmanaged_policy_arns[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mmax_session_duration[0m[0m  = 3600
+      [32m+[0m [0m[1m[0mname[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mpath[0m[0m                  = "/"
+      [32m+[0m [0m[1m[0mtags[0m[0m                  = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m              = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0munique_id[0m[0m             = (known after apply)
+
+      [32m+[0m [0minline_policy {
+          [32m+[0m [0m[1m[0mname[0m[0m   = (known after apply)
+          [32m+[0m [0m[1m[0mpolicy[0m[0m = (known after apply)
+        }
+    }
+
+[1m  # module.rds_cluster.aws_iam_role_policy_attachment.rds_enhanced_monitoring[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "rds_enhanced_monitoring" {
+      [32m+[0m [0m[1m[0mid[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpolicy_arn[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mrole[0m[0m       = (known after apply)
+    }
+
+[1m  # module.rds_cluster.aws_rds_cluster.this[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_rds_cluster" "this" {
+      [32m+[0m [0m[1m[0mallocated_storage[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mallow_major_version_upgrade[0m[0m     = false
+      [32m+[0m [0m[1m[0mapply_immediately[0m[0m               = true
+      [32m+[0m [0m[1m[0marn[0m[0m                             = (known after apply)
+      [32m+[0m [0m[1m[0mavailability_zones[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mbacktrack_window[0m[0m                = 0
+      [32m+[0m [0m[1m[0mbackup_retention_period[0m[0m         = 7
+      [32m+[0m [0m[1m[0mcluster_identifier[0m[0m              = "aurora-db-postgres"
+      [32m+[0m [0m[1m[0mcluster_identifier_prefix[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mcluster_members[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mcluster_resource_id[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mcopy_tags_to_snapshot[0m[0m           = false
+      [32m+[0m [0m[1m[0mdatabase_name[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mdb_cluster_parameter_group_name[0m[0m = "default"
+      [32m+[0m [0m[1m[0mdb_subnet_group_name[0m[0m            = "aurora-db-postgres"
+      [32m+[0m [0m[1m[0menable_global_write_forwarding[0m[0m  = false
+      [32m+[0m [0m[1m[0menable_http_endpoint[0m[0m            = false
+      [32m+[0m [0m[1m[0menabled_cloudwatch_logs_exports[0m[0m = [
+          [32m+[0m [0m"postgresql",
+        ]
+      [32m+[0m [0m[1m[0mendpoint[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mengine[0m[0m                          = "aurora-postgresql"
+      [32m+[0m [0m[1m[0mengine_mode[0m[0m                     = "provisioned"
+      [32m+[0m [0m[1m[0mengine_version[0m[0m                  = "13.1"
+      [32m+[0m [0m[1m[0mengine_version_actual[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mfinal_snapshot_identifier[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mhosted_zone_id[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0miam_roles[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0mkms_key_id[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0mmaster_password[0m[0m                 = (sensitive value)
+      [32m+[0m [0m[1m[0mmaster_username[0m[0m                 = "admin"
+      [32m+[0m [0m[1m[0mport[0m[0m                            = 5432
+      [32m+[0m [0m[1m[0mpreferred_backup_window[0m[0m         = "02:00-03:00"
+      [32m+[0m [0m[1m[0mpreferred_maintenance_window[0m[0m    = "sun:05:00-sun:06:00"
+      [32m+[0m [0m[1m[0mreader_endpoint[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mskip_final_snapshot[0m[0m             = false
+      [32m+[0m [0m[1m[0mstorage_encrypted[0m[0m               = true
+      [32m+[0m [0m[1m[0mtags[0m[0m                            = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                        = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc_security_group_ids[0m[0m          = (known after apply)
+
+      [32m+[0m [0mtimeouts {}
+    }
+
+[1m  # module.rds_cluster.aws_rds_cluster_instance.this["2"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_rds_cluster_instance" "this" {
+      [32m+[0m [0m[1m[0mapply_immediately[0m[0m                     = true
+      [32m+[0m [0m[1m[0marn[0m[0m                                   = (known after apply)
+      [32m+[0m [0m[1m[0mauto_minor_version_upgrade[0m[0m            = true
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mca_cert_identifier[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mcluster_identifier[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mcopy_tags_to_snapshot[0m[0m                 = false
+      [32m+[0m [0m[1m[0mdb_parameter_group_name[0m[0m               = "default"
+      [32m+[0m [0m[1m[0mdb_subnet_group_name[0m[0m                  = "aurora-db-postgres"
+      [32m+[0m [0m[1m[0mdbi_resource_id[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mendpoint[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0mengine[0m[0m                                = "aurora-postgresql"
+      [32m+[0m [0m[1m[0mengine_version[0m[0m                        = "13.1"
+      [32m+[0m [0m[1m[0mengine_version_actual[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                                    = (known after apply)
+      [32m+[0m [0m[1m[0midentifier[0m[0m                            = "aurora-db-postgres-2"
+      [32m+[0m [0m[1m[0midentifier_prefix[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0minstance_class[0m[0m                        = "db.r6g.large"
+      [32m+[0m [0m[1m[0mkms_key_id[0m[0m                            = (known after apply)
+      [32m+[0m [0m[1m[0mmonitoring_interval[0m[0m                   = 10
+      [32m+[0m [0m[1m[0mmonitoring_role_arn[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mperformance_insights_enabled[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mperformance_insights_kms_key_id[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mperformance_insights_retention_period[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mport[0m[0m                                  = (known after apply)
+      [32m+[0m [0m[1m[0mpreferred_backup_window[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mpreferred_maintenance_window[0m[0m          = "sun:05:00-sun:06:00"
+      [32m+[0m [0m[1m[0mpromotion_tier[0m[0m                        = 0
+      [32m+[0m [0m[1m[0mpublicly_accessible[0m[0m                   = false
+      [32m+[0m [0m[1m[0mstorage_encrypted[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                                  = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                              = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mwriter[0m[0m                                = (known after apply)
+
+      [32m+[0m [0mtimeouts {}
+    }
+
+[1m  # module.rds_cluster.aws_rds_cluster_instance.this["one"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_rds_cluster_instance" "this" {
+      [32m+[0m [0m[1m[0mapply_immediately[0m[0m                     = true
+      [32m+[0m [0m[1m[0marn[0m[0m                                   = (known after apply)
+      [32m+[0m [0m[1m[0mauto_minor_version_upgrade[0m[0m            = true
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mca_cert_identifier[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mcluster_identifier[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mcopy_tags_to_snapshot[0m[0m                 = false
+      [32m+[0m [0m[1m[0mdb_parameter_group_name[0m[0m               = "default"
+      [32m+[0m [0m[1m[0mdb_subnet_group_name[0m[0m                  = "aurora-db-postgres"
+      [32m+[0m [0m[1m[0mdbi_resource_id[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mendpoint[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0mengine[0m[0m                                = "aurora-postgresql"
+      [32m+[0m [0m[1m[0mengine_version[0m[0m                        = "13.1"
+      [32m+[0m [0m[1m[0mengine_version_actual[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                                    = (known after apply)
+      [32m+[0m [0m[1m[0midentifier[0m[0m                            = "aurora-db-postgres-one"
+      [32m+[0m [0m[1m[0midentifier_prefix[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0minstance_class[0m[0m                        = "db.r6g.large"
+      [32m+[0m [0m[1m[0mkms_key_id[0m[0m                            = (known after apply)
+      [32m+[0m [0m[1m[0mmonitoring_interval[0m[0m                   = 10
+      [32m+[0m [0m[1m[0mmonitoring_role_arn[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mperformance_insights_enabled[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mperformance_insights_kms_key_id[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mperformance_insights_retention_period[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mport[0m[0m                                  = (known after apply)
+      [32m+[0m [0m[1m[0mpreferred_backup_window[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mpreferred_maintenance_window[0m[0m          = "sun:05:00-sun:06:00"
+      [32m+[0m [0m[1m[0mpromotion_tier[0m[0m                        = 0
+      [32m+[0m [0m[1m[0mpublicly_accessible[0m[0m                   = false
+      [32m+[0m [0m[1m[0mstorage_encrypted[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                                  = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                              = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mwriter[0m[0m                                = (known after apply)
+
+      [32m+[0m [0mtimeouts {}
+    }
+
+[1m  # module.rds_cluster.aws_security_group.this[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m            = "Control traffic to/from RDS Aurora aurora-db-postgres"
+      [32m+[0m [0m[1m[0megress[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mingress[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m            = "aurora-db-postgres-"
+      [32m+[0m [0m[1m[0mowner_id[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false
+      [32m+[0m [0m[1m[0mtags[0m[0m                   = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "aurora-db-postgres"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m               = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "aurora-db-postgres"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                 = (known after apply)
+    }
+
+[1m  # module.rds_cluster.random_id.snapshot_identifier[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "random_id" "snapshot_identifier" {
+      [32m+[0m [0m[1m[0mb64_std[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mb64_url[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mbyte_length[0m[0m = 4
+      [32m+[0m [0m[1m[0mdec[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mhex[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mkeepers[0m[0m     = {
+          [32m+[0m [0m"id" = "aurora-db-postgres"
+        }
+    }
+
+[1m  # module.rds_cluster.random_password.master_password[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "random_password" "master_password" {
+      [32m+[0m [0m[1m[0mbcrypt_hash[0m[0m = (sensitive value)
+      [32m+[0m [0m[1m[0mid[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mlength[0m[0m      = 10
+      [32m+[0m [0m[1m[0mlower[0m[0m       = true
+      [32m+[0m [0m[1m[0mmin_lower[0m[0m   = 0
+      [32m+[0m [0m[1m[0mmin_numeric[0m[0m = 0
+      [32m+[0m [0m[1m[0mmin_special[0m[0m = 0
+      [32m+[0m [0m[1m[0mmin_upper[0m[0m   = 0
+      [32m+[0m [0m[1m[0mnumber[0m[0m      = true
+      [32m+[0m [0m[1m[0mnumeric[0m[0m     = true
+      [32m+[0m [0m[1m[0mresult[0m[0m      = (sensitive value)
+      [32m+[0m [0m[1m[0mspecial[0m[0m     = false
+      [32m+[0m [0m[1m[0mupper[0m[0m       = true
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["blue"].aws_eks_node_group.this[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_eks_node_group" "this" {
+      [32m+[0m [0m[1m[0mami_type[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0marn[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mcapacity_type[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mcluster_name[0m[0m           = "eks-cluster"
+      [32m+[0m [0m[1m[0mdisk_size[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0minstance_types[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mnode_group_name[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mnode_group_name_prefix[0m[0m = "blue-"
+      [32m+[0m [0m[1m[0mnode_role_arn[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mrelease_version[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mresources[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mstatus[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_ids[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                   = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "blue"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m               = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "blue"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mversion[0m[0m                = "1.22"
+
+      [32m+[0m [0mlaunch_template {
+          [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m    = (known after apply)
+          [32m+[0m [0m[1m[0mversion[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mscaling_config {
+          [32m+[0m [0m[1m[0mdesired_size[0m[0m = 1
+          [32m+[0m [0m[1m[0mmax_size[0m[0m     = 3
+          [32m+[0m [0m[1m[0mmin_size[0m[0m     = 1
+        }
+
+      [32m+[0m [0mtimeouts {}
+
+      [32m+[0m [0mupdate_config {
+          [32m+[0m [0m[1m[0mmax_unavailable[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mmax_unavailable_percentage[0m[0m = (known after apply)
+        }
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["blue"].aws_iam_role.this[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_iam_role" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0massume_role_policy[0m[0m    = jsonencode(
+            {
+              [32m+[0m [0mStatement = [
+                  [32m+[0m [0m{
+                      [32m+[0m [0mAction    = "sts:AssumeRole"
+                      [32m+[0m [0mEffect    = "Allow"
+                      [32m+[0m [0mPrincipal = {
+                          [32m+[0m [0mService = "ec2.amazonaws.com"
+                        }
+                      [32m+[0m [0mSid       = "EKSNodeAssumeRole"
+                    },
+                ]
+              [32m+[0m [0mVersion   = "2012-10-17"
+            }
+        )
+      [32m+[0m [0m[1m[0mcreate_date[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m           = "EKS managed node group IAM role"
+      [32m+[0m [0m[1m[0mforce_detach_policies[0m[0m = true
+      [32m+[0m [0m[1m[0mid[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mmanaged_policy_arns[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mmax_session_duration[0m[0m  = 3600
+      [32m+[0m [0m[1m[0mname[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m           = "blue-eks-node-group-"
+      [32m+[0m [0m[1m[0mpath[0m[0m                  = "/"
+      [32m+[0m [0m[1m[0mtags[0m[0m                  = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m              = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0munique_id[0m[0m             = (known after apply)
+
+      [32m+[0m [0minline_policy {
+          [32m+[0m [0m[1m[0mname[0m[0m   = (known after apply)
+          [32m+[0m [0m[1m[0mpolicy[0m[0m = (known after apply)
+        }
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["blue"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m [0m[1m[0mid[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpolicy_arn[0m[0m = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+      [32m+[0m [0m[1m[0mrole[0m[0m       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["blue"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m [0m[1m[0mid[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpolicy_arn[0m[0m = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+      [32m+[0m [0m[1m[0mrole[0m[0m       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["blue"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m [0m[1m[0mid[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpolicy_arn[0m[0m = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+      [32m+[0m [0m[1m[0mrole[0m[0m       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["blue"].aws_launch_template.this[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_launch_template" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mdefault_version[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m            = "Custom launch template for blue EKS managed node group"
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mlatest_version[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m            = "blue-"
+      [32m+[0m [0m[1m[0mtags[0m[0m                   = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m               = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mupdate_default_version[0m[0m = true
+      [32m+[0m [0m[1m[0mvpc_security_group_ids[0m[0m = (known after apply)
+
+      [32m+[0m [0mmetadata_options {
+          [32m+[0m [0m[1m[0mhttp_endpoint[0m[0m               = "enabled"
+          [32m+[0m [0m[1m[0mhttp_protocol_ipv6[0m[0m          = "disabled"
+          [32m+[0m [0m[1m[0mhttp_put_response_hop_limit[0m[0m = 2
+          [32m+[0m [0m[1m[0mhttp_tokens[0m[0m                 = "required"
+          [32m+[0m [0m[1m[0minstance_metadata_tags[0m[0m      = "disabled"
+        }
+
+      [32m+[0m [0mmonitoring {
+          [32m+[0m [0m[1m[0menabled[0m[0m = true
+        }
+
+      [32m+[0m [0mtag_specifications {
+          [32m+[0m [0m[1m[0mresource_type[0m[0m = "instance"
+          [32m+[0m [0m[1m[0mtags[0m[0m          = {
+              [32m+[0m [0m"Environment" = "Production"
+              [32m+[0m [0m"Name"        = "blue"
+              [32m+[0m [0m"Terraform"   = "true"
+            }
+        }
+      [32m+[0m [0mtag_specifications {
+          [32m+[0m [0m[1m[0mresource_type[0m[0m = "network-interface"
+          [32m+[0m [0m[1m[0mtags[0m[0m          = {
+              [32m+[0m [0m"Environment" = "Production"
+              [32m+[0m [0m"Name"        = "blue"
+              [32m+[0m [0m"Terraform"   = "true"
+            }
+        }
+      [32m+[0m [0mtag_specifications {
+          [32m+[0m [0m[1m[0mresource_type[0m[0m = "volume"
+          [32m+[0m [0m[1m[0mtags[0m[0m          = {
+              [32m+[0m [0m"Environment" = "Production"
+              [32m+[0m [0m"Name"        = "blue"
+              [32m+[0m [0m"Terraform"   = "true"
+            }
+        }
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["blue"].aws_security_group.this[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m            = "EKS managed node group security group"
+      [32m+[0m [0m[1m[0megress[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mingress[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m            = "blue-eks-node-group-"
+      [32m+[0m [0m[1m[0mowner_id[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false
+      [32m+[0m [0m[1m[0mtags[0m[0m                   = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "blue-eks-node-group"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m               = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "blue-eks-node-group"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                 = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["green"].aws_eks_node_group.this[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_eks_node_group" "this" {
+      [32m+[0m [0m[1m[0mami_type[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0marn[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mcapacity_type[0m[0m          = "SPOT"
+      [32m+[0m [0m[1m[0mcluster_name[0m[0m           = "eks-cluster"
+      [32m+[0m [0m[1m[0mdisk_size[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0minstance_types[0m[0m         = [
+          [32m+[0m [0m"t3.large",
+        ]
+      [32m+[0m [0m[1m[0mnode_group_name[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mnode_group_name_prefix[0m[0m = "green-"
+      [32m+[0m [0m[1m[0mnode_role_arn[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mrelease_version[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mresources[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mstatus[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_ids[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                   = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "green"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m               = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "green"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mversion[0m[0m                = "1.22"
+
+      [32m+[0m [0mlaunch_template {
+          [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m    = (known after apply)
+          [32m+[0m [0m[1m[0mversion[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mscaling_config {
+          [32m+[0m [0m[1m[0mdesired_size[0m[0m = 1
+          [32m+[0m [0m[1m[0mmax_size[0m[0m     = 10
+          [32m+[0m [0m[1m[0mmin_size[0m[0m     = 1
+        }
+
+      [32m+[0m [0mtimeouts {}
+
+      [32m+[0m [0mupdate_config {
+          [32m+[0m [0m[1m[0mmax_unavailable[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mmax_unavailable_percentage[0m[0m = (known after apply)
+        }
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["green"].aws_iam_role.this[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_iam_role" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0massume_role_policy[0m[0m    = jsonencode(
+            {
+              [32m+[0m [0mStatement = [
+                  [32m+[0m [0m{
+                      [32m+[0m [0mAction    = "sts:AssumeRole"
+                      [32m+[0m [0mEffect    = "Allow"
+                      [32m+[0m [0mPrincipal = {
+                          [32m+[0m [0mService = "ec2.amazonaws.com"
+                        }
+                      [32m+[0m [0mSid       = "EKSNodeAssumeRole"
+                    },
+                ]
+              [32m+[0m [0mVersion   = "2012-10-17"
+            }
+        )
+      [32m+[0m [0m[1m[0mcreate_date[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m           = "EKS managed node group IAM role"
+      [32m+[0m [0m[1m[0mforce_detach_policies[0m[0m = true
+      [32m+[0m [0m[1m[0mid[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mmanaged_policy_arns[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mmax_session_duration[0m[0m  = 3600
+      [32m+[0m [0m[1m[0mname[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m           = "green-eks-node-group-"
+      [32m+[0m [0m[1m[0mpath[0m[0m                  = "/"
+      [32m+[0m [0m[1m[0mtags[0m[0m                  = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m              = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0munique_id[0m[0m             = (known after apply)
+
+      [32m+[0m [0minline_policy {
+          [32m+[0m [0m[1m[0mname[0m[0m   = (known after apply)
+          [32m+[0m [0m[1m[0mpolicy[0m[0m = (known after apply)
+        }
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["green"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m [0m[1m[0mid[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpolicy_arn[0m[0m = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+      [32m+[0m [0m[1m[0mrole[0m[0m       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["green"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m [0m[1m[0mid[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpolicy_arn[0m[0m = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+      [32m+[0m [0m[1m[0mrole[0m[0m       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["green"].aws_iam_role_policy_attachment.this["arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "this" {
+      [32m+[0m [0m[1m[0mid[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpolicy_arn[0m[0m = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+      [32m+[0m [0m[1m[0mrole[0m[0m       = (known after apply)
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["green"].aws_launch_template.this[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_launch_template" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mdefault_version[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m            = "Custom launch template for green EKS managed node group"
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mlatest_version[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m            = "green-"
+      [32m+[0m [0m[1m[0mtags[0m[0m                   = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m               = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mupdate_default_version[0m[0m = true
+      [32m+[0m [0m[1m[0mvpc_security_group_ids[0m[0m = (known after apply)
+
+      [32m+[0m [0mmetadata_options {
+          [32m+[0m [0m[1m[0mhttp_endpoint[0m[0m               = "enabled"
+          [32m+[0m [0m[1m[0mhttp_protocol_ipv6[0m[0m          = "disabled"
+          [32m+[0m [0m[1m[0mhttp_put_response_hop_limit[0m[0m = 2
+          [32m+[0m [0m[1m[0mhttp_tokens[0m[0m                 = "required"
+          [32m+[0m [0m[1m[0minstance_metadata_tags[0m[0m      = "disabled"
+        }
+
+      [32m+[0m [0mmonitoring {
+          [32m+[0m [0m[1m[0menabled[0m[0m = true
+        }
+
+      [32m+[0m [0mtag_specifications {
+          [32m+[0m [0m[1m[0mresource_type[0m[0m = "instance"
+          [32m+[0m [0m[1m[0mtags[0m[0m          = {
+              [32m+[0m [0m"Environment" = "Production"
+              [32m+[0m [0m"Name"        = "green"
+              [32m+[0m [0m"Terraform"   = "true"
+            }
+        }
+      [32m+[0m [0mtag_specifications {
+          [32m+[0m [0m[1m[0mresource_type[0m[0m = "network-interface"
+          [32m+[0m [0m[1m[0mtags[0m[0m          = {
+              [32m+[0m [0m"Environment" = "Production"
+              [32m+[0m [0m"Name"        = "green"
+              [32m+[0m [0m"Terraform"   = "true"
+            }
+        }
+      [32m+[0m [0mtag_specifications {
+          [32m+[0m [0m[1m[0mresource_type[0m[0m = "volume"
+          [32m+[0m [0m[1m[0mtags[0m[0m          = {
+              [32m+[0m [0m"Environment" = "Production"
+              [32m+[0m [0m"Name"        = "green"
+              [32m+[0m [0m"Terraform"   = "true"
+            }
+        }
+    }
+
+[1m  # module.eks.module.eks_managed_node_group["green"].aws_security_group.this[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m            = "EKS managed node group security group"
+      [32m+[0m [0m[1m[0megress[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mingress[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m            = "green-eks-node-group-"
+      [32m+[0m [0m[1m[0mowner_id[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false
+      [32m+[0m [0m[1m[0mtags[0m[0m                   = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "green-eks-node-group"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m               = {
+          [32m+[0m [0m"Environment" = "Production"
+          [32m+[0m [0m"Name"        = "green-eks-node-group"
+          [32m+[0m [0m"Terraform"   = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                 = (known after apply)
+    }
+
+[0m[1mPlan:[0m 71 to add, 0 to change, 0 to destroy.
+[0m[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
